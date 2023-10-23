@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <div class="form-container">
+            <form action="">
+                <div class="input-name">
+                    <div class="icon">
+                        <i class="fa fa-user lock" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" placeholder="First Name" class="name">
+
+
+                <span>
+                    <i class="fa fa-user lock" aria-hidden="true"></i>
+                    <input type="text" placeholder="Last Name" class="name">
+                </span>
+                </div>
+
+                <div class="input-name">
+                    <i class="fa fa-envelope lock" aria-hidden="true"  style="align-items: center;"></i>
+                    <input type="email" placeholder="email" class="text-name">
+                </div>
+
+                <div class="input-name">
+                    <i class="fa fa-lock lock" aria-hidden="true"></i>
+                    <input type="password" id="password"  placeholder="enter your password" class="text-name">
+                    <p id="message">Password is <span id="strength" style="margin-left: 0px !important;"></span></p>
+                </div>
+
+                    <div class="input-name">
+                        <i class="fa fa-lock lock" aria-hidden="true"></i>
+                        <input type="password" placeholder="confirm your password" class="text-name">
+                    </div>
+                        
+                    <div class="input-name">
+                        <i class="fa fa-calendar lock" aria-hidden="true"></i>
+                        <input type="date" placeholder="enter your DOB" class="text-name">
+                    </div>
+
+                        <div class="input-name">
+                            <p>select your gender</p>
+                           
+                            <input type="radio" class="radio-button" name="gender">
+                            <label for="" style="margin-right: 10px;">Male</label>
+
+                             
+                            <input type="radio" class="radio-button" name="gender">
+                            <label for=""> Female</label>
+        
+                        </div>
+                        <div class="input-name">
+                        <div class="input-name">
+                            <label for="" class="ag" style="align-content: end;">Upload Your Image</label><br><br>
+                            <input type="file" name="filetoupload" id="filetoupload">
+                            
+                        </div>
+
+                        <div class="input-name">
+                            <input type="checkbox" id="cb" class="check-button">
+                            <label for="cb" class="check">I accept terms and condition</label>
+                        </div>
+
+                        <div class="input-name">
+                            <input type="submit" class="button" value="Register">
+                          
+                        </div>
+    
+
+            </form>
+        </div>
+            
+    </div>
+    <script>
+
+        var password = document.getElementById("password");
+        var message = document.getElementById("message");
+        var strength = document.getElementById("strength");
+
+        password.addEventListener('input', () => {
+            if (password.value.length > 0) {
+                message.style.display = "block";
+            }
+            else {
+                message.style.display = "none";
+            }
+
+            if (password.value.length < 5)
+                strength.innerHTML = "weak";
+            else if (password.value.length < 8)
+                strength.innerHTML = "mid";
+            else
+                strength.innerHTML = "strong";
+        });
+
+    </script>
+    
+</body>
+</html>
